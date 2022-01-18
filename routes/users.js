@@ -7,6 +7,7 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/test", function (req, res, next) {
-   res.json({ message: "success" });
+   return res.json({ message: "success" });
 });
+
 export default router;
