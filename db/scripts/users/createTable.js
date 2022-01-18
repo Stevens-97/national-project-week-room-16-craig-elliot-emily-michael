@@ -1,7 +1,7 @@
 import db from "../../connection.js";
 
 const response = db.query(
-  `CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, username TEXT, first_name TEXT, last_name TEXT);`
+   `CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, name TEXT, date DATE, dailyFeedBack TEXT, workShopRating INTEGER, guestLectureRating INTEGER, userFeelingRating INTEGER, bootcamperOfTheWeek TEXT);`
 );
 
 console.log(response);
