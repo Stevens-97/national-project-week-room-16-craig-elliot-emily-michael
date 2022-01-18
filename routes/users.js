@@ -3,7 +3,10 @@ const router = express.Router();
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
-  res.json({ message: "I wish we had some information to give you ☹️" });
+   res.json({ message: "I wish we had some information to give you ☹️" });
 });
 
+router.get("/test", function (req, res, next) {
+   res.json({ message: "success" });
+});
 export default router;
