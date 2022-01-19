@@ -1,11 +1,12 @@
 import pg from "pg";
+import * as config from "../config.js";
 
 const pool = new pg.Pool({
-   user: "dbuser",
-   host: "database.server.com",
-   database: "mydb",
-   password: "secretpassword",
-   port: 3211,
+   user: config.PGUSER,
+   host: config.PGHOST,
+   database: config.PGDATABASE,
+   password: config.PGPASSWORD,
+   port: config.PGPORT,
    ssl: { rejectUnauthorized: false },
 });
 
