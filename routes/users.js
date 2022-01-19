@@ -27,15 +27,15 @@ router.get("/test", async function (req, res) {
 });
 
 // Get all users
-router.get("/users", function (req, res, next) {
-   const allUsers = getAllUsers();
+router.get("/users",  async function (req, res, next) {
+   const allUsers = await getAllUsers();
    res.json({ success: true, payload: allUsers });
 });
 
 // Get user by id
-router.get("/users/:id", function (req, res) {
+router.get("/users/:id", async function (req, res) {
    const id = req.params.id;
-   const idReturned = getUserById(id);
+   const idReturned = await getUserById(id);
    res.json({ success: true, payload: idReturned });
 });
 

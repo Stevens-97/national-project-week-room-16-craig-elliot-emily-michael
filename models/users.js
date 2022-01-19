@@ -1,15 +1,16 @@
-// import { query } from "../db/connection.js";
+import  query  from "../db/connection.js";
 import { userData } from "../user-data.js";
 
-// export async function getAllUsers() {
-//    const result = query(`SELECT * FROM users;`);
-//    return result.rows;
-// }
+export async function getAllUsers() {
+   const result = await query(`SELECT * FROM bootcamperFeedback;`);
+   console.log("RESULTS HERE",result.rows);
+   return result.rows;
+}
 
 // To test get request
-export function getAllUsers() {
-   return userData;
-}
+// export function getAllUsers() {
+//    return userData;
+// }
 
 // get user by ID
 export function getUserById(userID) {

@@ -2,7 +2,7 @@ import query from "../../connection.js";
 import { userData } from "../../../user-data.js";
 
 async function populateUserDatabase(){
-    for (let i = 0; i < books.length; i++) {
+    for (let i = 0; i < userData.length; i++) {
          const {name, chort, date, dailyFeedBack, workShopRating, guestLectureRating, userFeelingRating, bootcamperOfTheWeek} = userData[i]
     
         const response = await query(
@@ -10,3 +10,4 @@ async function populateUserDatabase(){
             console.log(response);
         };
 };
+populateUserDatabase()
