@@ -8,7 +8,7 @@ const pool = new pg.Pool({
    database: config.database,
    password: config.password,
    port: config.db_port,
-   connectionString: config.dbUrl,
+   connectionString: config.connectionString,
    ssl: { rejectUnauthorized: false },
 });
 
