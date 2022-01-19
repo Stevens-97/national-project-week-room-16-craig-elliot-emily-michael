@@ -8,6 +8,7 @@ import debugLib from "debug";
 import http from "http";
 
 import app from "../app.js";
+import { db_port } from "../config.js";
 
 const debug = debugLib(
    "national-project-week-room-16-craig-elliot-emily-michael:server"
@@ -17,7 +18,7 @@ const debug = debugLib(
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || "5001");
+const port = normalizePort(db_port || "5001");
 app.set("port", port);
 
 /**
