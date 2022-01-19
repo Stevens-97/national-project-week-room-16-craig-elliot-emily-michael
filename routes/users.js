@@ -27,7 +27,7 @@ router.get("/test", async function (req, res) {
 });
 
 // Get all users
-router.get("/users",  async function (req, res, next) {
+router.get("/users", async function (req, res, next) {
    const allUsers = await getAllUsers();
    res.json({ success: true, payload: allUsers });
 });
@@ -41,9 +41,27 @@ router.get("/users/:id", async function (req, res) {
 
 // Doing Post request
 router.post("/users", function (req, res) {
-   const newUserData = req.body;
-   const addedUser = createUser(newUserData);
-   res.json({ success: true, payload: addedUser });
+   const {
+      name,
+      chort,
+      date,
+      dailyFeedBack,
+      workShopRating,
+      guestLectureRating,
+      userFeelingRating,
+      bootcamperOfTheWeek,
+   } = req.body;
+   const data = createUser(
+      name,
+      chort,
+      date,
+      dailyFeedBack,
+      workShopRating,
+      guestLectureRating,
+      userFeelingRating,
+      bootcamperOfTheWeek
+   );
+   res.json({ success: true, payload: data });
 });
 
 //Update user

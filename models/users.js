@@ -1,30 +1,49 @@
-import  query  from "../db/connection.js";
+import query from "../db/connection.js";
 import { userData } from "../user-data.js";
 
 export async function getAllUsers() {
    const result = await query(`SELECT * FROM bootcamperFeedback;`);
-   console.log("RESULTS HERE",result.rows);
+   console.log("RESULTS HERE", result.rows);
    return result.rows;
 }
 
-// To test get request
-// export function getAllUsers() {
-//    return userData;
-// }
-
 // get user by ID
-export function getUserById(userID) {
-   const foundUser = userData.find(function (data) {
-      return Number(userID) === data.id;
-   });
-   return foundUser;
+export async function getUserById(userID) {
+   const result = await query(
+      `SELECT * FROM bootcamperFeedback WHERE id=${userID}`
+   );
+   console.log(result.rows);
+   return result.rows;
 }
 
 // Appending User to userData
-export function createUser(user) {
-   userData.push(user);
+export async function createUser(
+   name,
+   chort,
+   date,
+   dailyFeedBack,
+   workShopRating,
+   guestLectureRating,
+   userFeelingRating,
+   bootcamperOfTheWeek
+) {
+   const result = await query(
+      `INSERT INTO bootcamperFeedback (name, chort, date, dailyfeedback, workshoprating, guestlecturerating, userfeelingrating, bootcamperoftheweek) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;`,
+      [
+         name,
+         chort,
+         date,
+         dailyFeedBack,
+         workShopRating,
+         guestLectureRating,
+         userFeelingRating,
+         bootcamperOfTheWeek,
+      ]
+   );
 
-   return userData[user.length - 1];
+   console.log(result.rows);
+
+   return result.rows;
 }
 
 // updating the data by ID
@@ -37,14 +56,8 @@ export function updateUser(id, updates) {
 }
 
 // delete user by id
-export function deleteUser(id) {
-   const foundIndex = userData.findIndex(function (data) {
-      return Number(data.id) === id;
-   });
-
-   const users = userData[foundIndex];
-
-   userData.splice(foundIndex, 1);
-
-   return users;
+export async function deleteUser(id) {
+   const result = await query(`DELETE FROM bootcamperFeedback WHERE id=${id}`);
+   console.log(result.rows);
+   return result.rows;
 }
