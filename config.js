@@ -3,3 +3,4 @@ export const host = process.env.PGHOST;
 export const database = process.env.PGDATABASE;
 export const password = process.env.PGPASSWORD;
 export const db_port = process.env.PGPORT;
+export const dbUrl = process.env.DATABASE_URL;

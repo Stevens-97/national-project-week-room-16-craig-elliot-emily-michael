@@ -1,7 +1,6 @@
 import pg from "pg";
 import * as config from "../config.js";
-import 'dotenv/config';
-
+import "dotenv/config";
 
 const pool = new pg.Pool({
    user: config.username,
@@ -9,6 +8,7 @@ const pool = new pg.Pool({
    database: config.database,
    password: config.password,
    port: config.db_port,
+   connectionString: config.dbUrl,
    ssl: { rejectUnauthorized: false },
 });
 
