@@ -1,5 +1,5 @@
-export const PGUSER = process.env.PGUSER;
-export const PGHOST = process.env.PGHOST;
-export const PGDATABASE = process.env.PGDATABASE;
-export const PGPASSWORD = process.env.PGPASSWORD;
-export const PGPORT = process.env.PGPORT;
+export const username = process.env.PGUSER;
+export const host = process.env.PGHOST;
+export const database = process.env.PGDATABASE;
+export const password = process.env.PGPASSWORD;
+export const db_port = process.env.PGPORT;

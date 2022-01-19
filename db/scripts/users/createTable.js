@@ -1,9 +1,14 @@
-import db from "../../connection.js";
+import query from "../../connection.js";
+// import db from "../../connection.js";
 
-const response = db.query(
-   `CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, name TEXT, date DATE, dailyFeedBack TEXT, workShopRating INTEGER, guestLectureRating INTEGER, userFeelingRating INTEGER, bootcamperOfTheWeek TEXT);`
-);
+const sqlString =  `CREATE TABLE IF NOT EXISTS bootcamperFeedback (id SERIAL PRIMARY KEY, name TEXT, date DATE, dailyFeedBack TEXT, workShopRating INTEGER, guestLectureRating INTEGER, userFeelingRating INTEGER, bootcamperOfTheWeek TEXT);`
+;
 
-console.log(response);
+async function createUserDatabase(){
+   const response = await query(sqlString)
+   console.log("Table Created", response);
 
-db.end();
+}
+
+
+createUserDatabase();

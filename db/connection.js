@@ -1,12 +1,14 @@
 import pg from "pg";
 import * as config from "../config.js";
+import 'dotenv/config';
+
 
 const pool = new pg.Pool({
-   user: config.PGUSER,
-   host: config.PGHOST,
-   database: config.PGDATABASE,
-   password: config.PGPASSWORD,
-   port: config.PGPORT,
+   user: config.username,
+   host: config.host,
+   database: config.database,
+   password: config.password,
+   port: config.db_port,
    ssl: { rejectUnauthorized: false },
 });
 

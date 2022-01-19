@@ -2,7 +2,6 @@ const date = Date();
 
 export const userData = [
    {
-      id: 1,
       name: "Emily",
       chort: 10,
       date: date,
@@ -13,7 +12,6 @@ export const userData = [
       bootcamperOfTheWeek: "",
    },
    {
-      id: 2,
       name: "Elliot",
       chort: 8,
       date: date,
@@ -24,7 +22,6 @@ export const userData = [
       bootcamperOfTheWeek: "",
    },
    {
-      id: 3,
       name: "Michael",
       chort: 11,
       date: date,
@@ -35,7 +32,6 @@ export const userData = [
       bootcamperOfTheWeek: "",
    },
    {
-      id: 4,
       name: "Craig",
       chort: 8,
       date: date,
