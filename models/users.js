@@ -46,7 +46,7 @@ export async function createUser(
    return result.rows;
 }
 
-// updating the data by ID
+// TODO updating the data by ID
 export function updateUser(id, updates) {
    const foundIndex = userData.findIndex(function (data) {
       return data.id === id;
