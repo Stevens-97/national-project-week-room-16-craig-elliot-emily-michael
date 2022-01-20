@@ -48,7 +48,7 @@ router.get("/users/:id", async function (req, res) {
 });
 
 // Doing Post request
-router.post("/users", function (req, res) {
+router.post("/users", async function (req, res) {
    // console.log(req.body);
    const {
       name,
@@ -92,9 +92,9 @@ router.put("/users/:id", function (req, res) {
 });
 
 // Delete item
-router.delete("/users/:id", function (req, res) {
+router.delete("/users/:id", async function (req, res) {
    const id = Number(req.params.id);
-   const deletedUser = deleteUser(id);
+   const deletedUser = await deleteUser(id);
 
    res.json({ success: true, payload: deletedUser });
 });
