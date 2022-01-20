@@ -41,6 +41,7 @@ router.get("/users/:id", async function (req, res) {
 
 // Doing Post request
 router.post("/users", function (req, res) {
+   // console.log(req.body);
    const {
       name,
       chort,
@@ -61,6 +62,7 @@ router.post("/users", function (req, res) {
       userFeelingRating,
       bootcamperOfTheWeek
    );
+
    res.json({ success: true, payload: data });
 });
 
