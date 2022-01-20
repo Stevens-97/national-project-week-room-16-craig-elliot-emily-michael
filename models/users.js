@@ -63,17 +63,17 @@ export async function deleteUser(id) {
 }
 //Get anonymous feeback table
 export async function getAnonFB(){
-    const result = await query(`SELECT * FROM AnonymousFB;`);
+    const result = await query(`SELECT * FROM AnonymousFeedback;`);
    console.log("RESULTS HERE", result.rows);
    return result.rows;
 }
 
 //Post anonymous feeback table
-export async function postAnonFB(date, name){
-   const result = await query(`INSERT INTO AnonymousFB (date, name) VALUES ($1, $2) RETURNING * ;`,
+export async function postAnonFB(date, feedback){
+   const result = await query(`INSERT INTO AnonymousFeedback (date, feedback) VALUES ($1, $2) RETURNING * ;`,
    [
       date,
-      name
+      feedback
    ]);
    return result.rows
 }

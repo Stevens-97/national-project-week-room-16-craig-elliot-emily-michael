@@ -76,11 +76,11 @@ router.post("/users", function (req, res) {
 router.post("/AnonymousFeedback", function (req, res){
    const {
       date,
-      name
+      feedback
    } = req.body;
    const data = postAnonFB(
       date, 
-      name
+      feedback
    );
    res.json({ success: true, payload: data });
 })
