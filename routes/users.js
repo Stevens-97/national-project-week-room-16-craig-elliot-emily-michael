@@ -35,7 +35,7 @@ router.get("/users", async function (req, res, next) {
 });
 
 //Get anonymous feeback
-router.get("/AnonymousFeeback", async function (req, res, next) {
+router.get("/AnonymousFeedback", async function (req, res, next) {
    const allFeedback = await getAnonFB();
    res.json({ success: true, payload: allFeedback });
 });
