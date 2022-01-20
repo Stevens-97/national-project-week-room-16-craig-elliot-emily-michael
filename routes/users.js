@@ -48,12 +48,8 @@ router.get("/users/:id", async function (req, res) {
 });
 
 // Doing Post request
-<<<<<<< HEAD
 router.post("/users", function (req, res) {
    // console.log(req.body);
-=======
-router.post("/users", async function (req, res) {
->>>>>>> c7db5e1f021d96791097c7d6438b77a512551944
    const {
       name,
       chort,
@@ -79,17 +75,11 @@ router.post("/users", async function (req, res) {
 });
 
 //Doing Anonymous Post Request
-router.post("/AnonymousFeedback", function (req, res){
-   const {
-      date,
-      feedback
-   } = req.body;
-   const data = postAnonFB(
-      date, 
-      feedback
-   );
+router.post("/AnonymousFeedback", function (req, res) {
+   const { date, feedback } = req.body;
+   const data = postAnonFB(date, feedback);
    res.json({ success: true, payload: data });
-})
+});
 
 //Update user
 router.put("/users/:id", function (req, res) {
