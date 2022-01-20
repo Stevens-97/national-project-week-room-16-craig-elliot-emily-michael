@@ -7,6 +7,7 @@
       "start": "node ./bin/www.js",
       "createtable": "node ./db/scripts/users/createTable.js",
       "populatetable": "node ./db/scripts/users/populateTable.js",
+      "createanonymoustable": "node ./db/scripts/users/createAnonFBTable.js",
       "dev": "nodemon ./bin/www.js"
    },
    "engines": {
