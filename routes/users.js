@@ -8,6 +8,8 @@ import {
    createUser,
    updateUser,
    deleteUser,
+   getAnonFB,
+   postAnonFB,
 } from "../models/users.js";
 
 // const router = express.Router()
@@ -30,6 +32,12 @@ router.get("/test", async function (req, res) {
 router.get("/users", async function (req, res, next) {
    const allUsers = await getAllUsers();
    res.json({ success: true, payload: allUsers });
+});
+
+//Get anonymous feeback
+router.get("/AnonymousFeeback", async function (req, res, next) {
+   const allFeedback = await getAnonFB();
+   res.json({ success: true, payload: allFeedback });
 });
 
 // Get user by id
@@ -65,6 +73,19 @@ router.post("/users", function (req, res) {
 
    res.json({ success: true, payload: data });
 });
+
+//Doing Anonymous Post Request
+router.post("/AnonymousFeedback", function (req, res){
+   const {
+      date,
+      name
+   } = req.body;
+   const data = postAnonFB(
+      date, 
+      name
+   );
+   res.json({ success: true, payload: data });
+})
 
 //Update user
 router.put("/users/:id", function (req, res) {
