@@ -70,7 +70,7 @@ export async function getAnonFB(){
 
 //Post anonymous feeback table
 export async function postAnonFB(date, name){
-   const result = await query(`INSERT INTO AnonymousFeeback (date, name) VALUES ($1, $2) RETURNING * ;`,
+   const result = await query(`INSERT INTO AnonymousFB (date, name) VALUES ($1, $2) RETURNING * ;`,
    [
       date,
       name
