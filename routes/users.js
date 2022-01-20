@@ -48,7 +48,7 @@ router.get("/users/:id", async function (req, res) {
 });
 
 // Doing Post request
-router.post("/users", function (req, res) {
+router.post("/users", async function (req, res) {
    const {
       name,
       chort,
@@ -59,7 +59,7 @@ router.post("/users", function (req, res) {
       userFeelingRating,
       bootcamperOfTheWeek,
    } = req.body;
-   const data = createUser(
+   const data = await createUser(
       name,
       chort,
       date,

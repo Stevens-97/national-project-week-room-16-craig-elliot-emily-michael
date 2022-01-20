@@ -8,7 +8,8 @@
       "createtable": "node ./db/scripts/users/createTable.js",
       "populatetable": "node ./db/scripts/users/populateTable.js",
       "createanonymoustable": "node ./db/scripts/users/createAnonFBTable.js",
-      "dev": "nodemon ./bin/www.js"
+      "dev": "nodemon ./bin/www.js",
+      "test": "node -r dotenv/config --experimental-vm-modules node_modules/jest/bin/jest.js"
    },
    "engines": {
       "node": "16.x"
@@ -23,6 +24,8 @@
       "pg": "^8.7.1"
    },
    "devDependencies": {
-      "nodemon": "^2.0.15"
+      "jest": "^27.4.7",
+      "nodemon": "^2.0.15",
+      "supertest": "^6.2.2"
    }
 }
